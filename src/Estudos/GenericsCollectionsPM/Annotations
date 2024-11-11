@@ -1,0 +1,55 @@
+<<Generics>>
+--> Funcionalidade que permite a utilizacao de classes, interfaces e metodos sem parametrizacao, ou seja, trabalham
+com qualquer tipagem de dado. !! Ao istanciar, nao aceita tipos primitivos, mas sim Wrapper Types (Integer,Double,..).
+public class Bag<T> {}
+public class Family<T,S> {} // Key,Value ("Joaquim", "sun")
+
+<<Collections Framework>>
+--> Conjunto de interfaces, classes e metodos, que fornece uma estrutura capaz de armazenar, manipular e acessar
+colecoes de dados de forma pratica.
+--> Principais interfaces do Framework:
+ - List  (LISTA-duplicada)
+ - Set   (LISTA-spotfy)
+ - Stack (LIFO-pilha)
+ - Queue (FIFO-impressora)
+ - Map   (KEY/VALUE-"chave"/valor)
+--> Principais metodos de cada:
+ -Collections
+    sort(array) ordena os objetos T do array de acordo com seu compareTo()
+    sort(array,inverseOrder()) inverte a ordem do array
+    reverse(array) inverte a ordem do array, independente se esta ordenado ou nao, inverte como esta
+    Collections.max(array) e Collections.min(array) encontram o maior e o menor elemento da lista, usando o compareTo() dos elementos
+ -List
+    add(element) adiciona a lista
+    remove(element) remove da lista
+    get(element_index) encontra o elemento por endereco na lista
+ - Set
+    add(element) adiciona a lista
+    remove(element) remove da lista
+    get(element_index) encontra o elemento por endereco na lista
+ - Map
+    put(element(key,value) adiciona elemento
+    get(element_key) encontra o elemento pela sua key
+    values() retorna uma colecao com todos os values do map
+    remove(element_key) remove o elemento pela sua key
+
+ <<Comparable>>
+--> Interface Java que, em genericos, permite que objetos de uma classe generica sejam comparaveis, permitindo que possamos
+ordená-los, encontrar máximos ou mínimos, e realizar comparações de maneira consistente.
+--> Utilizacoes:
+ - Restricao de Tipo
+    Define que os obetos T, de uma classe generica, devem ser comparaveis
+    Ex1: public class GenericMap<K,V extends Comaparable<V> {...}
+    Neste caso, V deve ser um objeto comparavel, e podera usar o metodo compareTo()
+    Ex2: public class GenericList<T extends Coparable<T> {...}
+    Neste caso, V deve ser um objeto comparavel, e podera usar o metodo compareTo()
+ - Definir Contrato
+    Define que a classe deve implementar polimorfismo para compareTo()
+    Ex1: public class Generic<T extends Comparable<T> implements Comparable<Generic<T>> {
+            @Override
+            public int compareTo(Generic<T> other) {...}
+         }
+    Ex2: public class Product implements Comparable<Product> {
+            @Override
+            public int compareTo(Product other) {...}
+         }
