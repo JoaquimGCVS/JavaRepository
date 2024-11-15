@@ -1,3 +1,13 @@
+How to connect to github?
+Habilitar Controle de Versão (Enable Version Control):
+git init
+git remote add origin URL_DO_REPOSITORIO
+git remote -v
+git branch
+git add .
+git commit -m "Commit"
+git push -u origin main/master
+
 How to commit?
 git add .
 git commit -m "Descrição do que foi alterado"
