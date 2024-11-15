@@ -1,0 +1,26 @@
+Exceptions
+--> São erros ou comportamentos inadequados identificados durante a execução de um programa.
+Podem ser herdadas de duas classes principais, que fazem parte da classe Throwable:
+ -1. java.lang.Exception
+    Exceções verificadas (checked exceptions): obrigatoriamente precisam ser tratadas com try-catch ou propagadas com throws.
+    --try-catch:
+        Envolve o código propenso a lançar a exceção (try) e define o tratamento no mesmo local (catch).
+        catch: define o tipo de Exception que sera lancada
+        Permite que o programa continue sua execução após o tratamento ou finalize de forma controlada.
+    --throws:
+        Declara que o tratamento da exceção será responsabilidade de outro método ou camada do código.
+        Propaga a exceção para o método chamador, que pode tratá-la ou propagá-la novamente.
+    Uso comum: IOException (erros de entrada e saida)
+ -2. java.lang.RuntimeException
+    Exceções não verificadas (unchecked exceptions): não precisam ser tratadas ou propagadas explicitamente.
+        Não é obrigatório usar try-catch ou throws.
+        Geralmente representam erros de lógica de programação.
+    Uso comum: RuntimeException
+        - NullPointerException (tentativa de acesso de uma posicao em um array, que nao existe(a posicao))
+        - ArithmeticException (tentativa de acesso ao variavel que vale null (cariavel==null)
+--> Metodo printStackTrace(): faz parte da classe Throwable (que é a classe base para todas as exceções em Java) e
+        é usado para imprimir o rastreamento da pilha de execução de uma exceção no momento em que ela foi lançada.
+        Esse rastreamento da pilha (stack trace) fornece informações detalhadas sobre a origem do erro, facilitando a depuração.
+--> finally{..}
+    Eh o bloco que contem um codigo a ser executado independente da ocorencia, ou nao ocorrencia, de uma excecao
+    Muito utilizado para fechar arquivos ou fechar qualquer outra merda
