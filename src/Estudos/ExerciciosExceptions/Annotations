@@ -23,4 +23,7 @@ Podem ser herdadas de duas classes principais, que fazem parte da classe Throwab
         Esse rastreamento da pilha (stack trace) fornece informações detalhadas sobre a origem do erro, facilitando a depuração.
 --> finally{..}
     Eh o bloco que contem um codigo a ser executado independente da ocorencia, ou nao ocorrencia, de uma excecao
-    Muito utilizado para fechar arquivos ou fechar qualquer outra merda
+    Muito utilizado para fechar arquivos ou fechar qualquer outra coisa
+--> Utilizacoes:
+    Olha o try-catch voce vai usar no main, ou seja, na camada de controle
+    O throw voce vai usar em classes destinadas para excecoes, ou seja, camada mais internas e voltadas para modelos de negocios

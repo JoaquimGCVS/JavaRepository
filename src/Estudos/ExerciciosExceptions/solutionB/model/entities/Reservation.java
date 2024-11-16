@@ -1,5 +1,7 @@
 package Estudos.ExerciciosExceptions.solutionB.model.entities;
 
+import Estudos.ExerciciosExceptions.solutionB.model.service.ReservationService;
+
 import java.time.LocalDate;
 
 public class Reservation {
@@ -39,6 +41,14 @@ public class Reservation {
     public void updateDates(Reservation reservation, LocalDate newCheckin, LocalDate newCheckout) {
         reservation.setCheckin(newCheckin);
         reservation.setCheckout(newCheckout);
+    }
+
+    public void updateDates(LocalDate newCheckin, LocalDate newCheckout) {
+        ReservationService exception = new ReservationService();
+        exception.updateDatesExceptions(this,newCheckin,newCheckout); // this chama a propria instancia de Resevation
+        // que chamar esse metodo no main
+        // Ex: Reservation reservationEX = new Reservation(101, LocalDate.of(2024, 5, 10), LocalDate.of(2024, 5, 20));
+        //       reservationEX.updateDates(LocalDate.of(2024, 5, 5), LocalDate.of(2024, 5, 15)); // this chama a propria reservationEX
     }
 
     public void getReservation(Reservation reservation) {
