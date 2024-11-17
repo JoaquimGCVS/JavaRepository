@@ -27,3 +27,20 @@ Podem ser herdadas de duas classes principais, que fazem parte da classe Throwab
 --> Utilizacoes:
     Olha o try-catch voce vai usar no main, ou seja, na camada de controle
     O throw voce vai usar em classes destinadas para excecoes, ou seja, camada mais internas e voltadas para modelos de negocios
+--> Hierarquia de Exceptions:
+Throwable
+  ├── Exception
+  │     ├── IOException
+  │     ├── SQLException
+  │     └── RuntimeException
+  │           ├── NullPointerException
+  │           ├── ArithmeticException
+  │           └── IndexOutOfBoundsException
+  └── Error
+        ├── OutOfMemoryError
+        └── StackOverflowError
+
+Exemplos comuns de Exceptions:
+ArithmeticException: Divisão por zero.
+NullPointerException: Tentativa de acessar um objeto nulo.
+IOException: Problemas de entrada/saída, como falhas ao acessar arquivos.

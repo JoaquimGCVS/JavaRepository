@@ -1,8 +1,9 @@
-package Estudos.ExerciciosExceptions.solutionB.model.entities;
+package Estudos.ExerciciosExceptions.solutionB.entities;
 
-import Estudos.ExerciciosExceptions.solutionB.model.service.ReservationService;
+import Estudos.ExerciciosExceptions.solutionB.service.ReservationService;
 
 import java.time.LocalDate;
+import java.time.temporal.ChronoUnit;
 
 public class Reservation {
     private Integer roomNumber;
@@ -34,13 +35,8 @@ public class Reservation {
         this.roomNumber=roomNumber;
     }
 
-    public Integer duration(Reservation reservation) {
-        return reservation.getCheckin().getYear() - reservation.getCheckout().getYear();
-    }
-
-    public void updateDates(Reservation reservation, LocalDate newCheckin, LocalDate newCheckout) {
-        reservation.setCheckin(newCheckin);
-        reservation.setCheckout(newCheckout);
+    public long aprimoratedDuration() {
+        return ChronoUnit.DAYS.between(getCheckin(),getCheckout());
     }
 
     public void updateDates(LocalDate newCheckin, LocalDate newCheckout) {
@@ -59,8 +55,8 @@ public class Reservation {
 
     @Override
     public String toString() {
-        return "Checkin: " + getCheckin() +
-                "Checkout: " + getCheckout() +
+        return "Checkin: " + getCheckin() + " " +
+                 "Checkout: " + getCheckout() + " " +
                 "Room Number: " + getRoomNumber();
     }
 }

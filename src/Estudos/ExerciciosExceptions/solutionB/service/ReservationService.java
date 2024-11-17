@@ -1,7 +1,7 @@
-package Estudos.ExerciciosExceptions.solutionB.model.service;
+package Estudos.ExerciciosExceptions.solutionB.service;
 
-import Estudos.ExerciciosExceptions.solutionB.model.entities.Reservation;
-import Estudos.ExerciciosExceptions.solutionB.model.exceptions.DomainsException;
+import Estudos.ExerciciosExceptions.solutionB.entities.Reservation;
+import Estudos.ExerciciosExceptions.solutionB.exceptions.DomainsException;
 
 import java.time.LocalDate;
 

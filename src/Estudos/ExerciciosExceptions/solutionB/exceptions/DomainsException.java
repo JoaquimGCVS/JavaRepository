@@ -1,4 +1,4 @@
-package Estudos.ExerciciosExceptions.solutionB.model.exceptions;
+package Estudos.ExerciciosExceptions.solutionB.exceptions;
 
 public class DomainsException extends RuntimeException{
     public DomainsException (String message) {
