@@ -1,4 +1,4 @@
-package Estudos.ExerciciosExceptions.solutionC.entities;
+package Estudos.ExerciciosExceptions.udemyBad.entities;
 
 import java.util.Date;
 import java.util.concurrent.TimeUnit;

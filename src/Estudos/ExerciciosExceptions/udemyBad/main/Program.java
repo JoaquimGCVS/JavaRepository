@@ -1,6 +1,6 @@
-package Estudos.ExerciciosExceptions.solutionC.main;
+package Estudos.ExerciciosExceptions.udemyBad.main;
 
-import Estudos.ExerciciosExceptions.solutionC.entities.Reservation;
+import Estudos.ExerciciosExceptions.udemyBad.entities.Reservation;
 
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
