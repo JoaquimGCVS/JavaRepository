@@ -1,0 +1,27 @@
+--> Design Patterns
+O que sao: Se tratam de padroes de projeto, que implementam solucoes que sao reutilizaveis e comprovadas para problemas comuns do
+desenvolvimento de software. Eles foram popularizados pelo livro "Design Patterns: Elements of Reusable Object-Oriented Software"
+dos autores conhecidos como "Gang of Four" (GoF). Esses padrões não são pedaços de código prontos, mas estruturas que facilitam o
+design de sistemas mais robustos, flexíveis e fáceis de manter.
+
+--> Podem ser dividos, principalmente, em padroes:
+    - Criacionais (criação de objetos, flexibilidade e reutilização)
+    - Estruturais (composição de classes e objetos)
+    - Comportamentais (interação e responsabilidade entre objetos)
+
+--> Principais Design Patterns:
+
+    1- Singleton
+        - Conceito:
+            Eh um padrao que estabele que uma classe deve ter apenas uma instancia. Essa instancia sera uma instancia global, que,
+            posteriormente, sera acessada pelo codigo quando a instancia da classe for necessaria.
+        - Casos de uso:
+            Conexoes com Banco de Dados e Gerenciadores de Configuracao, ou seja, casos em que sao necessarios a utilizacao de
+            apenas uma intancia do Objeto para as operacoes do respectivo Sistema.
+
+    2- Decorator
+        - Conceito:
+            Funciona como uma heranca simples de uma classe abstrata. Basicamente  permite adicionar funcionalidades a objetos
+            individualmente e de forma dinâmica, sem afetar outros objetos da mesma classe.
+        - Casos de uso:
+            Herancas e interfaces
