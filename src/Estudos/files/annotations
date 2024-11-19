@@ -1,0 +1,46 @@
+--> Files
+
+- Manipulacao de arquivos em java
+- Ex de uso: File file = new File("caminho\\do\\arquivo");
+- Quando instanciar representar "\" do caminho como "\\"
+- Leitura do Scanner:
+
+    File file = new File("C:\\Users\\jgui9\\Desktop\\temp\\in.txt");
+            Scanner sc = null;
+            try {
+                sc = new Scanner(file);
+                while (sc.hasNextLine()) {
+                    System.out.println(sc.nextLine());
+                }
+            } catch (IOException e) {
+                System.out.println("Error: " + e.getMessage());
+            } finally {
+                if (sc != null) {
+                    sc.close();
+                }
+            }
+
+As classes FileReader e BufferedReader são componentes do pacote java.io, usadas para leitura de arquivos.
+
+1. FileReader
+    - Projetada para ler caracteres de arquivos de texto. Ela estende a classe InputStreamReader e facilita a leitura
+    de caracteres diretamente de um arquivo especificado.
+    - Mais adequada para ler dados em formato de texto simples (caracteres), não para dados binários.
+    - Não possui métodos de buffering, o que pode levar a uma leitura mais lenta em comparação com outras soluções.
+    - Construção básica: FileReader fileReader = new FileReader("example.txt");
+
+2. BufferedReader
+    - Eh uma camada de buffer em torno de um Reader, como FileReader. Ela fornece uma maneira eficiente de ler texto, usando
+    buffers de armazenamento para aumentar o desempenho de leitura.
+    - Ao envolver um FileReader com um BufferedReader, o programa pode ler grandes blocos de dados de uma vez, em vez de ler
+    um caractere de cada vez. Isso reduz a quantidade de operações de E/S (entrada/saída), tornando a leitura mais eficiente.
+    - BufferedReader também oferece métodos úteis, como readLine(), que lê uma linha inteira de texto de uma vez:
+    - Construção básica: BufferedReader bufferedReader = new BufferedReader(new FileReader("example.txt"));
+
+3. Buffering (O que eh?)
+    - Se trata de uma tecnica, buffering "segura" os dados em um espaço temporário antes que eles sejam realmente processados,
+    o que ajuda a economizar tempo e aumentar a eficiência.
+- Resumo do Uso Conjunto:
+    - FileReader lê caracteres de um arquivo.
+    - BufferedReader lê grandes blocos de texto de maneira eficiente ao usar um FileReader (ou qualquer outro Reader).
+    - Ao combiná-los, você obtém uma leitura de texto de arquivos com melhor desempenho e mais flexibilidade.
