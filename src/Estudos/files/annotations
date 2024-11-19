@@ -27,15 +27,15 @@ As classes FileReader e BufferedReader são componentes do pacote java.io, usada
     de caracteres diretamente de um arquivo especificado.
     - Mais adequada para ler dados em formato de texto simples (caracteres), não para dados binários.
     - Não possui métodos de buffering, o que pode levar a uma leitura mais lenta em comparação com outras soluções.
-    - Construção básica: FileReader fileReader = new FileReader("example.txt");
+    - Construção básica: FileReader fileReader = new FileReader("path");
 
-2. BufferedReader
+2. BufferedReader (mais rapido)
     - Eh uma camada de buffer em torno de um Reader, como FileReader. Ela fornece uma maneira eficiente de ler texto, usando
     buffers de armazenamento para aumentar o desempenho de leitura.
     - Ao envolver um FileReader com um BufferedReader, o programa pode ler grandes blocos de dados de uma vez, em vez de ler
     um caractere de cada vez. Isso reduz a quantidade de operações de E/S (entrada/saída), tornando a leitura mais eficiente.
     - BufferedReader também oferece métodos úteis, como readLine(), que lê uma linha inteira de texto de uma vez:
-    - Construção básica: BufferedReader bufferedReader = new BufferedReader(new FileReader("example.txt"));
+    - Construção básica: BufferedReader bufferedReader = new BufferedReader(new FileReader("path"));
 
 3. Buffering (O que eh?)
     - Se trata de uma tecnica, buffering "segura" os dados em um espaço temporário antes que eles sejam realmente processados,
@@ -44,3 +44,46 @@ As classes FileReader e BufferedReader são componentes do pacote java.io, usada
     - FileReader lê caracteres de um arquivo.
     - BufferedReader lê grandes blocos de texto de maneira eficiente ao usar um FileReader (ou qualquer outro Reader).
     - Ao combiná-los, você obtém uma leitura de texto de arquivos com melhor desempenho e mais flexibilidade.
+
+4. Utilizando
+    String path = "C:\\Users\\jgui9\\Desktop\\PROJETOS INTELLJ\\ExerciciosCurso\\src\\Estudos\\files\\in.txt";
+            try (BufferedReader br = new BufferedReader(new FileReader(path))){
+                String line = br.readLine();
+                while (line!=null) {
+                    System.out.println(line);
+                    line = br.readLine();
+                }
+            } catch (IOException e) {
+                System.out.printf("Error: " + e.getMessage());
+            }
+
+--> FileWriter e BufferedWriter
+
+1. FileWriter
+    - O FileWriter é uma classe utilizada para gravar caracteres em arquivos. Ela é a forma mais simples de escrever texto em um arquivo.
+    Casos de uso:
+        1- Ao usar FileWriter("path"), o arquivo será sobrescrito se já existir.
+        Ex:
+            FileWriter fileWriter = new FileWriter("path");
+            fileWriter.write("Texto para o arquivo");
+            fileWriter.close();
+        2- Modo "append" (FileWriter(path, true)):
+        Quando true é passado como o segundo parâmetro, a escrita é feita no final do arquivo, acrescentando o conteudo
+        ao arquivo existente.
+        Ex:
+            FileWriter fileWriter = new FileWriter("path", true);
+            fileWriter.write("Texto adicional");
+            fileWriter.close();
+
+2. BufferedWriter(mais rapido)
+    - BufferedWriter é uma classe que "envolve" o FileWriter, adicionando um buffer para otimizar a escrita de texto. Ele armazena
+    temporariamente os dados antes de escrevê-los efetivamente no arquivo.
+    - Usando BufferedWriter, as operações de escrita são mais rápidas, pois ele grava blocos de dados ao invés de um único caractere
+    por vez.
+    Ex:
+    FileWriter fr = new FileWriter("path");
+    BufferedWriter bf = new BufferedWriter(fr);
+    OU
+    (economiza linhas) BufferedWriter bf = new BufferedWriter (new FileWriter ("path"));
+    bufferedWriter.write("Texto no arquivo");
+    bufferedWriter.close();
