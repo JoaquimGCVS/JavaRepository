@@ -11,7 +11,7 @@ design de sistemas mais robustos, flexíveis e fáceis de manter.
 
 --> Principais Design Patterns:
 
-    1- Singleton
+    1- Singleton (Criacional Pattern)
         - Conceito:
             Eh um padrao que estabele que uma classe deve ter apenas uma instancia. Essa instancia sera uma instancia global, que,
             posteriormente, sera acessada pelo codigo quando a instancia da classe for necessaria.
