@@ -1,0 +1,44 @@
+How to connect to github?
+    Habilitar Controle de Versão (Enable Version Control):
+    git init
+    git remote add origin URL_DO_REPOSITORIO
+
+How to commit?
+    Primeira commit:
+            Habilitar Controle de Versão (Enable Version Control):
+            git init
+            git remote add origin URL_DO_REPOSITORIO
+            git add .
+            git commit -m "Commit"  \\comitar com mensagem
+            git push -u origin main/master
+    Segunda para frente:
+            git add .
+            git commit -m "Commit"
+            git push
+    Commitar arquivo especifico:
+            git add file_name
+
+Consultar
+    git log           \\complete status
+    git branch        \\consultar qual branch esta em use
+    git difference    \\consultar as modificaoes feitas de um commit para o outro
+    git remote -v     \\consultar qual repositorio remoto esta conectado com o arquivo
+
+How to discart differences?
+    git restore                \\remove todas as modificaoes
+    git restore file_name      \\remove todas as modificaoes do arquivo especifico
+
+How to clean terminal?
+    clear                      \\limpa o terminal inteiro
+
+How to create new branches(ramificacoes)?
+    git checkout -b new_branch_name \\cria uma nova ramificacao para branch antiga e essa nova se torna a em use
+    git checkout branch_name \\retorna para a braxnch escolhida (ja existente)
+    git merge branch_name \\comando para dar um merge entre a branch atual e a branch digitada no comando
+
+Merge: unir uma ramificacao da branch principal com a branch principal, adicionado ao seu codigo(principal) as
+suas modificacoes(ramificacao)
+
+Puxar alteracoes de fora do codigo(feitas por outros)
+    git pull bracnh_name    //puxar
+    fit fetch     //sincoriniza todas alteracoes do repo remoto com o codigo local
