@@ -1,27 +1,40 @@
 --> Design Patterns
-O que sao: Se tratam de padroes de projeto, que implementam solucoes que sao reutilizaveis e comprovadas para problemas comuns do
-desenvolvimento de software. Eles foram popularizados pelo livro "Design Patterns: Elements of Reusable Object-Oriented Software"
-dos autores conhecidos como "Gang of Four" (GoF). Esses padrões não são pedaços de código prontos, mas estruturas que facilitam o
-design de sistemas mais robustos, flexíveis e fáceis de manter.
+O que são:
+Se tratam de padrões de projeto que implementam soluções reutilizáveis e comprovadas para problemas comuns no desenvolvimento de software. Eles foram popularizados pelo livro *"Design Patterns: Elements of Reusable Object-Oriented Software"* dos autores conhecidos como "Gang of Four" (GoF). Esses padrões não são pedaços de código prontos, mas estruturas que facilitam o design de sistemas mais robustos, flexíveis e fáceis de manter.
 
---> Podem ser dividos, principalmente, em padroes:
-    - Criacionais (criação de objetos, flexibilidade e reutilização)
-    - Estruturais (composição de classes e objetos)
-    - Comportamentais (interação e responsabilidade entre objetos)
+--> Podem ser divididos, principalmente, em padrões:
+   - **Criacionais**: Focados na criação de objetos, garantindo flexibilidade e reutilização.
+   - **Estruturais**: Tratam da composição de classes e objetos, formando estruturas maiores.
+   - **Comportamentais**: Lidam com a interação e responsabilidades entre objetos.
 
 --> Principais Design Patterns:
 
-    1- Singleton (Criacional Pattern)
-        - Conceito:
-            Eh um padrao que estabele que uma classe deve ter apenas uma instancia. Essa instancia sera uma instancia global, que,
-            posteriormente, sera acessada pelo codigo quando a instancia da classe for necessaria.
-        - Casos de uso:
-            Conexoes com Banco de Dados e Gerenciadores de Configuracao, ou seja, casos em que sao necessarios a utilizacao de
-            apenas uma intancia do Objeto para as operacoes do respectivo Sistema.
+1. **Singleton (Padrão Criacional)**
+   - **Conceito**:
+     Garante que uma classe tenha apenas uma única instância durante toda a execução do programa. Fornece um ponto de acesso global para essa instância.
+   - **Casos de uso**:
+     Usado em gerenciadores de configuração, conexões com banco de dados e sistemas onde apenas uma instância é necessária para centralizar operações.
 
-    2- Decorator
-        - Conceito:
-            Funciona como uma heranca simples de uma classe abstrata. Basicamente  permite adicionar funcionalidades a objetos
-            individualmente e de forma dinâmica, sem afetar outros objetos da mesma classe.
-        - Casos de uso:
-            Herancas e interfaces
+2. **Factory (Padrão Criacional)**
+   - **Conceito**:
+     Fornece uma interface para criar objetos sem expor sua lógica de criação. Permite que o código cliente solicite um objeto sem depender de suas classes concretas.
+   - **Casos de uso**:
+     Quando você precisa encapsular a criação de objetos ou quando deseja delegar a lógica de construção para um único ponto centralizado.
+
+3. **Observer (Padrão Comportamental)**
+   - **Conceito**:
+     Estabelece uma relação de dependência entre objetos, onde uma mudança no estado de um objeto (o *Subject*) notifica automaticamente outros objetos dependentes (*Observers*).
+   - **Casos de uso**:
+     Sistemas de notificações, eventos, atualizações automáticas em interfaces ou aplicativos como gerenciadores de assinatura de eventos.
+
+4. **Strategy (Padrão Comportamental)**
+   - **Conceito**:
+     Permite definir uma família de algoritmos, encapsulá-los e alternar entre eles em tempo de execução, sem alterar o código cliente.
+   - **Casos de uso**:
+     Para alternar entre diferentes estratégias ou comportamentos, como métodos de pagamento, ordenação ou cálculos específicos.
+
+5. **Decorator (Padrão Estrutural)**
+   - **Conceito**:
+     Permite adicionar funcionalidades adicionais a objetos individualmente e de forma dinâmica, sem alterar a classe base. Ele funciona como uma composição, encapsulando o objeto original e adicionando camadas de comportamento.
+   - **Casos de uso**:
+     Para evitar a criação de múltiplas subclasses com combinações específicas de funcionalidades ou quando você precisa adicionar ou remover comportamentos dinamicamente.

@@ -41,4 +41,4 @@ suas modificacoes(ramificacao)
 
 Puxar alteracoes de fora do codigo(feitas por outros)
     git pull bracnh_name    //puxar
-    fit fetch     //sincoriniza todas alteracoes do repo remoto com o codigo local
+    git fetch               //sincoriniza todas alteracoes do repo remoto com o codigo local
