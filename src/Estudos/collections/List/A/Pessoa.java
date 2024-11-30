@@ -1,4 +1,4 @@
-package Estudos.collections.List;
+package Estudos.collections.List.A;
 
 public class Pessoa {
     private String name;

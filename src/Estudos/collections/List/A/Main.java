@@ -1,4 +1,4 @@
-package Estudos.collections.List;
+package Estudos.collections.List.A;
 
 import java.util.ArrayList;
 import java.util.List;
